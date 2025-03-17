@@ -61,7 +61,7 @@ sentences = [
 ]
 
 # Train model
-model = Word2Vec(sentences, vector_size=100, window=5, min_count=1, workers=4)
+model = Word2Vec(sentences, vector_size=128, window=5, min_count=1, workers=4)
 
 # Create a dictionary of word vectors for our custom function
 word_vectors = {word: model.wv[word] for word in model.wv.index_to_key}
