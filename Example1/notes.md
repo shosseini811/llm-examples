@@ -1,14 +1,14 @@
 The `similarity` method in Word2Vec (from `gensim.models.Word2Vec`) calculates the **cosine similarity** between two word vectors. Here's the mathematical equation for cosine similarity, which is what `model.wv.similarity('cat', 'dog')` computes:
 
 Given two word vectors:
-- \( \mathbf{v_{cat}} \) = vector for "cat" (e.g., a 100-dimensional vector),
-- \( \mathbf{v_{dog}} \) = vector for "dog" (e.g., a 100-dimensional vector),
+- `v_cat` = vector for "cat" (e.g., a 100-dimensional vector)
+- `v_dog` = vector for "dog" (e.g., a 100-dimensional vector)
 
 The cosine similarity is defined as:
 
-\[
-\text{similarity}(\mathbf{v_{cat}}, \mathbf{v_{dog}}) = \cos(\theta) = \frac{\mathbf{v_{cat}} \cdot \mathbf{v_{dog}}}{\|\mathbf{v_{cat}}\| \|\mathbf{v_{dog}}\|}
-\]
+```
+similarity(v_cat, v_dog) = cos(θ) = (v_cat · v_dog) / (||v_cat|| ||v_dog||)
+```
 
 Where:
 - `v_cat · v_dog` is the **dot product** of the two vectors:
@@ -28,7 +28,7 @@ Where:
   ```
 
 ### In Context:
-For `similarity = model.wv.similarity('cat', 'dog')`, the vectors \( \mathbf{v_{cat}} \) and \( \mathbf{v_{dog}} \) are retrieved from the trained Word2Vec model (`model.wv['cat']` and `model.wv['dog']`), and the cosine similarity is computed using the formula above.
+For `similarity = model.wv.similarity('cat', 'dog')`, the vectors `v_cat` and `v_dog` are retrieved from the trained Word2Vec model (`model.wv['cat']` and `model.wv['dog']`), and the cosine similarity is computed using the formula above.
 
 ### Example with Small Vectors:
 If:
@@ -45,7 +45,7 @@ In Word2Vec, this process is applied to higher-dimensional vectors (e.g., 100 di
 
 ---------
 
-The `most_similar` method in Word2Vec (from `gensim.models.Word2Vec`) finds the top \( n \) words whose vectors have the highest cosine similarity to a given word's vector. Here's the mathematical foundation for `similar_words = model.wv.most_similar('cat', topn=3)`:
+The `most_similar` method in Word2Vec (from `gensim.models.Word2Vec`) finds the top `n` words whose vectors have the highest cosine similarity to a given word's vector. Here's the mathematical foundation for `similar_words = model.wv.most_similar('cat', topn=3)`:
 
 ### Cosine Similarity Recap
 For any two vectors `v_a` (e.g., the vector for "cat") and `v_b` (vector for another word in the vocabulary), the cosine similarity is:
