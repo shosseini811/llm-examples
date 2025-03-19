@@ -100,7 +100,7 @@ class BPETokenizer:
             print(f"Corpus size: {len(corpus)} documents")
         
         # Initialize with character-level tokenization
-        # Split each text into characters
+        # Split each text into characters (preserving case)
         sequences = [[c for c in text] for text in corpus]
         
         # Add all unique characters to the vocabulary
@@ -195,8 +195,8 @@ class BPETokenizer:
         Returns:
             List of token IDs
         """
-        # Simple preprocessing: lowercase and split by whitespace
-        words = text.lower().split()
+        # Split text by whitespace (preserving case)
+        words = text.split()
         
         # Tokenize each word and flatten the result
         tokens = []
