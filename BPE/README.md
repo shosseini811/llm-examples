@@ -92,7 +92,7 @@ The code is thoroughly commented and includes type hints for better readability 
 
 ## Visualizations
 
-This project includes several high-quality visualizations to help understand BPE tokenization:
+This project includes several high-quality visualizations to help understand BPE tokenization. Below are examples of the visualizations produced by this project:
 
 ### BPE Dashboard
 
@@ -110,6 +110,12 @@ A comprehensive dashboard that combines multiple visualizations into a single pr
 python bpe_dashboard.py --model model.json --text-file sample.txt --output visualizations/bpe_dashboard.png
 ```
 
+<details>
+<summary>View BPE Dashboard Example</summary>
+
+![BPE Dashboard](./visualizations/updated_bpe_dashboard.png)
+</details>
+
 ### BPE Process Visualization
 
 A step-by-step visualization of how BPE tokenization works, showing each merge operation in the process:
@@ -118,6 +124,12 @@ A step-by-step visualization of how BPE tokenization works, showing each merge o
 # Visualize the BPE process
 python visualize_bpe.py --model model.json --text "language model" --output visualizations/bpe_process.png
 ```
+
+<details>
+<summary>View BPE Process Visualization Example</summary>
+
+![BPE Process](./visualizations/bpe_process.png)
+</details>
 
 ### Tokenization Comparison
 
@@ -128,6 +140,12 @@ Compare character-level, word-level, and BPE tokenization approaches with color-
 python compare_tokenization.py --model model.json --text "This is an example of tokenization." --output visualizations/tokenization_comparison.png
 ```
 
+<details>
+<summary>View Tokenization Comparison Example</summary>
+
+![Tokenization Comparison](./visualizations/tokenization_viz.png)
+</details>
+
 ### Language Modeling Visualization
 
 Visualize how BPE tokenization helps with language modeling by showing parameter sharing across similar words:
@@ -136,6 +154,12 @@ Visualize how BPE tokenization helps with language modeling by showing parameter
 # Visualize language modeling with BPE
 python language_modeling_viz_fixed.py --output visualizations/language_modeling.png
 ```
+
+<details>
+<summary>View Language Modeling Visualization Example</summary>
+
+![Language Modeling](./visualizations/language_modeling_viz.png)
+</details>
 
 ### Token Distribution and Counts
 
@@ -148,6 +172,18 @@ python compare_tokenization.py --model model.json --text-file sample.txt --distr
 # Generate token counts visualization
 python compare_tokenization.py --model model.json --text-file sample.txt --counts-output visualizations/token_counts.png
 ```
+
+<details>
+<summary>View Token Distribution Example</summary>
+
+![Token Distribution](./visualizations/tokenization_comparison_distribution.png)
+</details>
+
+<details>
+<summary>View Token Counts Example</summary>
+
+![Token Counts](./visualizations/tokenization_comparison_counts.png)
+</details>
 
 All visualizations are saved in the `visualizations/` directory.
 
