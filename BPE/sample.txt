@@ -1,0 +1,13 @@
+Byte Pair Encoding (BPE) is a data compression technique that iteratively replaces the most frequent pair of consecutive bytes in a sequence with a single, unused byte. This algorithm has been adapted for use in natural language processing as a subword tokenization method.
+
+In the context of language models, BPE starts with a vocabulary of individual characters and iteratively merges the most frequent adjacent character pairs to form new tokens. This process continues until a desired vocabulary size is reached.
+
+BPE offers several advantages for language models:
+1. It creates a fixed-size vocabulary, which is computationally efficient.
+2. It handles rare words by breaking them into subword units.
+3. It can represent any word, even those not seen during training.
+4. It finds a good balance between character-level and word-level tokenization.
+
+For example, the word "untransformable" might be tokenized as "un" + "transform" + "able", allowing the model to understand its meaning even if the full word was never seen during training.
+
+BPE is widely used in modern language models like GPT, BERT, and their derivatives, helping these models achieve impressive performance across various natural language processing tasks.

@@ -1,0 +1,26 @@
+Byte Pair Encoding (BPE) is a data compression technique that iteratively replaces the most frequent pair of consecutive bytes in a sequence with a single, unused byte. The algorithm was first described by Philip Gage in 1994.
+
+In the context of Natural Language Processing (NLP), BPE has been adapted to operate on characters or character sequences rather than bytes. It was introduced to NLP by Rico Sennrich, Barry Haddow, and Alexandra Birch in 2016 for Neural Machine Translation.
+
+BPE for NLP works as follows:
+1. Initialize the vocabulary with all individual characters in the corpus.
+2. Count the frequency of adjacent character pairs in the corpus.
+3. Merge the most frequent pair and add it to the vocabulary.
+4. Repeat steps 2-3 until a desired vocabulary size is reached or a frequency threshold is met.
+
+BPE is particularly useful for handling rare words and morphologically rich languages. By breaking words into subword units, it can represent unseen words as a sequence of known subword tokens. This approach balances the flexibility of character-level models with the efficiency of word-level models.
+
+Modern language models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers) use variants of BPE for tokenization. For example, GPT-2 and GPT-3 use a byte-level BPE that operates on raw bytes rather than Unicode characters, allowing them to encode any text without encountering unknown tokens.
+
+The advantages of BPE include:
+- Handling out-of-vocabulary words by decomposing them into subword units
+- Capturing common morphological patterns (prefixes, suffixes, stems)
+- Providing a good balance between vocabulary size and sequence length
+- Being language-agnostic and applicable to any text corpus
+
+However, BPE also has limitations:
+- It may create linguistically meaningless subword units
+- It relies purely on statistical frequency rather than linguistic knowledge
+- The optimal vocabulary size depends on the specific task and language
+
+Despite these limitations, BPE and its variants have become the standard tokenization approach for state-of-the-art language models, contributing significantly to their impressive performance across various NLP tasks.
