@@ -1,0 +1,2 @@
+# No external dependencies required beyond Python standard library
+# This file is included for compatibility with standard Python project structures
