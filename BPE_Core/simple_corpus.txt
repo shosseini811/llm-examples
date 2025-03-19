@@ -1,0 +1,10 @@
+This is a simple corpus for testing BPE tokenization.
+It contains a few sentences with different words and structures.
+BPE works by merging the most frequent pairs of characters or tokens.
+The algorithm starts with character-level tokenization and builds up.
+Tokenization is an important step in natural language processing.
+Machine learning models need tokenized input to process text.
+Transformers like GPT and BERT use subword tokenization methods.
+Byte Pair Encoding is one of the most popular subword tokenization techniques.
+The quick brown fox jumps over the lazy dog.
+Hello world! This is a test of BPE tokenization.

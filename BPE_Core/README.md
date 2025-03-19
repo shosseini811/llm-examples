@@ -64,10 +64,13 @@ python bpe.py --verbose
 python bpe.py --vocab-size 1000 --verbose
 
 # Train using a custom corpus file
-python bpe.py --corpus-file my_corpus.txt --vocab-size 1000 --verbose
+python bpe.py --corpus-file simple_corpus.txt --vocab-size 1000 --verbose
 
 # Load a pre-trained model
 python bpe.py --load-path bpe_model.json
+
+# Use the provided sample corpus file
+python bpe.py --corpus-file sample_corpus.txt --verbose
 ```
 
 ## Implementation Details
@@ -82,7 +85,7 @@ The code is thoroughly commented and includes type hints for better readability 
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.8+
 - No external dependencies beyond the Python standard library
 
 ## License
