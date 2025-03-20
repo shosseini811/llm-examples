@@ -1,28 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Byte Pair Encoding (BPE) Implementation from Scratch
+SubwordTokenizer: A Byte Pair Encoding (BPE) Implementation
 
-This module provides a clean implementation of the BPE algorithm
-without any visualization components.
+This module provides an implementation of the BPE algorithm for subword tokenization,
+which is commonly used in modern NLP models.
 """
 
 import re
 import json
 import argparse
-from typing import Dict, List, Tuple, Set, Counter as CounterType
-from collections import Counter
+import os
+from typing import Dict, List, Tuple, Set
+from collections import defaultdict
 
 
 class BPETokenizer:
     """
-    Byte Pair Encoding (BPE) tokenizer implementation.
+    Subword Tokenizer using Byte Pair Encoding (BPE) algorithm.
     
-    BPE is a subword tokenization algorithm that iteratively merges the most
-    frequent pairs of adjacent tokens, starting from character-level tokenization.
+    This tokenizer starts with character-level tokens and iteratively merges
+    the most frequent adjacent token pairs to create a vocabulary of subword units.
     """
     
-    def __init__(self, vocab_size: int = 10000):
+    def __init__(self, vocab_size: int = 50):
         """
         Initialize a BPE tokenizer.
         
@@ -392,11 +393,18 @@ def main():
         print(f"Saved model to {args.save_path}")
     
     # Demonstrate encoding and decoding
+    # test_sentences = [
+    #     "The quick brown fox jumps over the lazy dog.",
+    #     "BPE tokenization is useful for language models.",
+    #     "This is an example of encoding and decoding with BPE."
+    # ]
+
     test_sentences = [
-        "The quick brown fox jumps over the lazy dog.",
-        "BPE tokenization is useful for language models.",
-        "This is an example of encoding and decoding with BPE."
-    ]
+    "This is the Hugging Face Course.",
+    "This chapter is about tokenization.",
+    "This section shows several tokenizer algorithms.",
+    "Hopefully, you will be able to understand how they are trained and generate tokens.",
+]
     
     print("\nDemonstration of encoding and decoding:")
     for sentence in test_sentences:
